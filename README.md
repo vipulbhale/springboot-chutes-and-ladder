@@ -76,7 +76,9 @@ mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
 cd springboot-chutesladders-1.0-SNAPSHOT/unix
-java -Denvironment=<environmentname> -jar ./springboot-chutesladders-0.0.1-SNAPSHOT.jar JOHN JOE PETER DAVID
+java -Dspring.profiles.active=<environmentName> -jar ./springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
+#for e.g.
+java -Dspring.profiles.active=dev -jar ./springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
 ```
 
 - #### on windows 
@@ -104,7 +106,7 @@ mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
 cd springboot-chutesladders-1.0-SNAPSHOT/windows
-java -Denvironment=<environmentname> -jar ./springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
+java -Dspring.profiles.active=<environmentName> -jar ./springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
 ```
 ### TODO
 - Add tests for random pick up of chutes and ladder configuration from multiple configuration.
