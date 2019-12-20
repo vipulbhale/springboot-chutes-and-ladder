@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.candidate.priceline</groupId>
 	<artifactId>springboot-chutes-and-ladder</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>springboot-chutes-and-ladder</name>
 	<description>Chutes and Ladder using springboot</description>
 
