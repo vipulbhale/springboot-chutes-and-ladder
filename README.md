@@ -100,3 +100,4 @@ java -Denvironment=<environmentname> -jar ./springboot-chutesladders-0.0.1-SNAPS
 ### TODO
 - Add tests for random pick up of chutes and ladder configuration from multiple configuration.
 - Create a windows batch file for this app.
+- Add Jenkinsfile to make it easy to deploy on Jenkins.

@@ -40,24 +40,28 @@ public class GameService {
             for (int i = 0; i < players.size(); i++) {
                 player = players.get(i);
                 int currentPosition = player.getCurrentPosition();
+                logger.trace("Spinning the wheel");
                 int spin = spinner.spin();
                 turn++;
+                logger.trace("Spin value for this turn{},is {}", turn,spin);
                 int newPosition = currentPosition + spin;
                 int effectiveNewPosition = newPosition;
                 if (newPosition <= 100) {
                     if (request.getGame().getBoard().getSquares()[currentPosition + spin].hasChuteOrLadder()) {
                         effectiveNewPosition = chuteAndLadderConfig.get(currentPosition + spin);
-                        player.setCurrentPosition(effectiveNewPosition);
-                        player.getSquarePositions().add(effectiveNewPosition);
                         System.out.println(printOutput(turn, player.getName(), currentPosition, newPosition, request.getGame().getBoard().getSquares()[currentPosition + spin].getMoverType(), effectiveNewPosition));
-
                     } else {
-                        player.setCurrentPosition(effectiveNewPosition);
-                        player.getSquarePositions().add(effectiveNewPosition);
                         System.out.println(printOutput(turn, player.getName(), currentPosition, effectiveNewPosition));
                     }
-                    if (effectiveNewPosition == 100)
+                    logger.trace("New effective position is {}",effectiveNewPosition);
+                    player.setCurrentPosition(effectiveNewPosition);
+                    player.getSquarePositions().add(effectiveNewPosition);
+                    if (effectiveNewPosition == 100){
+                        logger.trace("Player reached at square 100 {}",player.getName());
+                        logger.trace("Players all attributes are {}", player);
+                        logger.traceExit("startGame");
                         return player.getName();
+                    }
                 }
             }
         }
