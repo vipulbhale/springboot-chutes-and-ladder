@@ -1,0 +1,121 @@
+[
+  {
+    "configId": 1,
+    "configuration": [
+      {
+        "id": 1,
+        "type": "ladder",
+        "startSquare": 1,
+        "endSquare": 38
+      },
+      {
+        "id": 2,
+        "type": "ladder",
+        "startSquare": 4,
+        "endSquare": 14
+      },
+      {
+        "id": 3,
+        "type": "ladder",
+        "startSquare": 9,
+        "endSquare": 31
+      },
+      {
+        "id": 4,
+        "type": "ladder",
+        "startSquare": 28,
+        "endSquare": 84
+      },
+      {
+        "id": 5,
+        "type": "ladder",
+        "startSquare": 21,
+        "endSquare": 42
+      },
+      {
+        "id": 6,
+        "type": "ladder",
+        "startSquare": 36,
+        "endSquare": 44
+      },
+      {
+        "id": 7,
+        "type": "ladder",
+        "startSquare": 51,
+        "endSquare": 67
+      },
+      {
+        "id": 8,
+        "type": "ladder",
+        "startSquare": 71,
+        "endSquare": 91
+      },
+      {
+        "id": 9,
+        "type": "ladder",
+        "startSquare": 80,
+        "endSquare": 100
+      },
+      {
+        "id": 10,
+        "type": "chute",
+        "startSquare": 16,
+        "endSquare": 6
+      },
+      {
+        "id": 11,
+        "type": "chute",
+        "startSquare": 49,
+        "endSquare": 11
+      },
+      {
+        "id": 12,
+        "type": "chute",
+        "startSquare": 62,
+        "endSquare": 19
+      },
+      {
+        "id": 13,
+        "type": "chute",
+        "startSquare": 87,
+        "endSquare": 24
+      },
+      {
+        "id": 14,
+        "type": "chute",
+        "startSquare": 47,
+        "endSquare": 26
+      },
+      {
+        "id": 15,
+        "type": "chute",
+        "startSquare": 56,
+        "endSquare": 53
+      },
+      {
+        "id": 16,
+        "type": "chute",
+        "startSquare": 64,
+        "endSquare": 60
+      },
+      {
+        "id": 17,
+        "type": "chute",
+        "startSquare": 93,
+        "endSquare": 73
+      },
+      {
+        "id": 18,
+        "type": "chute",
+        "startSquare": 95,
+        "endSquare": 75
+      },
+      {
+        "id": 19,
+        "type": "chute",
+        "startSquare": 98,
+        "endSquare": 78
+      }
+    ]
+  }
+]
