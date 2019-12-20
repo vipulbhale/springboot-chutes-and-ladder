@@ -4,11 +4,10 @@ This application is a standalone java application(using Springboot) simulating C
 
 ###Assumptions
 - This simulation doesn't have any GUI component.
-- It assumes only 2-4 players.
-- It assumes spinner is going to spin and give the value from 1-6.
-- Chutes and Ladder configuration has to be given in the form of a json file referenced via **location.chutesandladder** property inside the application*.properties file in resources directory. A sample and explanation follows as below:
-It is essentially an array of multiple configurations. Game picks up the configuration Randomly. If you are not sure. Please keep only one configuration as kept in the project.
-Every configuration has id and within it is an array of construct depicting moveType i.e. either a chute or ladder. Below sample shows a chute and a ladder. Chute has startSquare greater than endsquare and Ladder is vice versa. Id for every chute and ladder should be unique. Type specifies whether its a chute or ladder
+- Only 2-4 players can play.
+- Spinner is going to spin and give the value from 1-6.
+- Chutes and Ladder configuration has to be given in the form of a json file referenced via **location.chutesandladder** property inside the application*.properties file in resources directory. 
+A sample and explanation as below: 
 ```json
 [
   {
@@ -30,25 +29,32 @@ Every configuration has id and within it is an array of construct depicting move
   }
 ]
 ``` 
+   *_It is essentially an array of multiple configurations. Game picks up the configuration randomly. If you are not sure, please keep only one configuration as kept currently in the project.
+    Every configuration has id and within it is an array of construct depicting moveType i.e. either a chute or ladder. Below sample shows a chute and a ladder. Chute has startSquare greater than endsquare and for ladder it is opposite. Id for every chute and ladder should be unique. Type specifies whether it's a chute or ladder._*
 
 -  Number of squares on the board can be changed by a property **square.total** in the application*.properties file. 
 ### Prerequisites
-To build and compile maven, Java 8
+To build and compile maven, Java 8 is required.
 
 ### How to setup the project in IDE
 ``` git
-    git clone https://github.com/vipubhale/springboot-chutes-and-ladder.git
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 ```
  Import it as a maven project in Intellij or eclipse
  
 ### How to run tests
 ```bash
-mvn clean test verify
+cd springboot-chutes-and-ladder
+mvn clean verify
+#in case sonar is there
+mvn -Dsonar.host.url=<sonar.url> clean verify sonar:sonar package
 ```
+Coverage report would be in target directory.
+
 ### How to run it locally
 - ####on mac or linux 
 ```bash
-git clone https://github.com/vipubhale/springboot-chutes-and-ladder.git
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
@@ -62,7 +68,7 @@ cd springboot-chutes-and-ladder-1.0-SNAPSHOT/unix/bin
 ```
 Run it in lower(dev and qa) environments. Please make sure application.**environmentName**.properties file exists in src/main/resources directory
 ```bash
-git clone https://github.com/vipubhale/springboot-chutes-and-ladder.git
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
@@ -73,7 +79,7 @@ java -Denvironment=<environmentname> -jar ./springboot-chutesladders-0.0.1-SNAPS
 
 - ####on windows 
 ```bash
-git clone https://github.com/vipubhale/springboot-chutes-and-ladder.git
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean package
 cd target/
@@ -89,7 +95,7 @@ java -jar springboot-chutesladders-0.0.1-SNAPSHOT.jar JOHN JOE PETER DAVID
 
 Run it in lower(dev and qa) environments. Please make sure application.**environmentName**.properties file exists in src/main/resources directory
 ```bash
-git clone https://github.com/vipubhale/springboot-chutes-and-ladder.git
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
