@@ -31,10 +31,10 @@ public class Driver implements CommandLineRunner {
         logger.info("Starting the application");
         argProcessor(args);
         Request request = requestFacade.createRequest(args);
-        logger.info("Created Request is {}", request);
+        logger.trace("Created Request is {}", request);
         String winnerPlayerName = gameService.startGame(request);
         this.setWinner(winnerPlayerName);
-        System.out.printf("The winner is %s!", winnerPlayerName);
+        System.out.printf("The winner is %s!\n", winnerPlayerName);
         logger.info("Exiting the application.");
     }
 
