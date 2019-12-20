@@ -1,6 +1,7 @@
 # Chutes and Ladders(Standalone application using springboot)
 This application is a standalone java application(using Springboot) simulating Chutes and Ladders game.
 
+
 ###Assumptions
 - This simulation doesn't have any GUI component.
 - It assumes only 2-4 players.
