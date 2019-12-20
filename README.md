@@ -1,8 +1,7 @@
 # Chutes and Ladders(Standalone application using springboot)
 This application is a standalone java application(using Springboot) simulating Chutes and Ladders game.
 
-
-###Assumptions
+### Assumptions
 - This simulation doesn't have any GUI component.
 - Only 2-4 players can play.
 - Spinner is going to spin and give the value from 1-6.
@@ -29,7 +28,7 @@ A sample and explanation as below:
   }
 ]
 ``` 
-   *_It is essentially an array of multiple configurations. Game picks up the configuration randomly. If you are not sure, please keep only one configuration as kept currently in the project.
+   *_It is essentially an array of multiple configurations. At the start of the game application picks up the configuration randomly out of all configurations that remains same during that game for all players. If you are not sure, please keep only one configuration as kept currently in the project.
     Every configuration has id and within it is an array of construct depicting moveType i.e. either a chute or ladder. Below sample shows a chute and a ladder. Chute has startSquare greater than endsquare and for ladder it is opposite. Id for every chute and ladder should be unique. Type specifies whether it's a chute or ladder._*
 
 -  Number of squares on the board can be changed by a property **square.total** in the application*.properties file. 
@@ -44,6 +43,7 @@ git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
  
 ### How to run tests
 ```bash
+git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder
 mvn clean verify
 #in case sonar is there
@@ -52,56 +52,59 @@ mvn -Dsonar.host.url=<sonar.url> clean verify sonar:sonar package
 Coverage report would be in target directory.
 
 ### How to run it locally
-- ####on mac or linux 
+- #### on mac or linux 
 ```bash
 git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
-cd springboot-chutes-and-ladder-1.0-SNAPSHOT/unix/bin
+cd springboot-chutesladders-1.0-SNAPSHOT/unix/bin
 ```
 ./run.sh args #**args are player names(2 to 4) separated by space** for e.g.
 
 ```bash
 ./run.sh JOHN JOE DAVID BOB
 ```
-Run it in lower(dev and qa) environments. Please make sure application.**environmentName**.properties file exists in src/main/resources directory
+  To run it for specific environments(dev,qa, prod , etc. except **test**), please make sure application.**environmentName**.properties file exists in src/main/resources directory. Application is already bundled with properties files for dev, qa and prod. If environment is not given as system property default file i.e. application.properties will be picked up.
+  
+  Example of running it for a specific environment:
 ```bash
 git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
-cd springboot-chutes-and-ladder-1.0-SNAPSHOT/unix
+cd springboot-chutesladders-1.0-SNAPSHOT/unix
 java -Denvironment=<environmentname> -jar ./springboot-chutesladders-0.0.1-SNAPSHOT.jar JOHN JOE PETER DAVID
 ```
 
-- ####on windows 
+- #### on windows 
 ```bash
 git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean package
 cd target/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
-cd springboot-chutes-and-ladder-1.0-SNAPSHOT/windows
-java -jar springboot-chutesladders-0.0.1-SNAPSHOT.jar 
+cd springboot-chutesladders-1.0-SNAPSHOT/windows
 ```
-java -jar springboot-chutesladders-0.0.1-SNAPSHOT.jar args #**args are player names(2 to 4) separated by space** for e.g.
+java -jar springboot-chutesladders-1.0-SNAPSHOT.jar args #**args are player names(2 to 4) separated by space** for e.g.
 
 ```bash
-java -jar springboot-chutesladders-0.0.1-SNAPSHOT.jar JOHN JOE PETER DAVID
+java -jar springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
 ```
 
-Run it in lower(dev and qa) environments. Please make sure application.**environmentName**.properties file exists in src/main/resources directory
+  To run it for specific environments(dev,qa, prod , etc. except **test**), please make sure application.**environmentName**.properties file exists in src/main/resources directory. Application is already bundled with properties files for dev, qa and prod. If environment is not given as system property default file i.e. application.properties will be picked up.
+  
+  Example of running it for a specific environment:
 ```bash
 git clone https://github.com/vipulbhale/springboot-chutes-and-ladder.git
 cd springboot-chutes-and-ladder  # parallel to pom.xml
 mvn clean install
 cd ~/.m2/repository/com/candidate/priceline/springboot-chutes-and-ladder/1.0-SNAPSHOT/
 unzip springboot-chutes-and-ladder-1.0-SNAPSHOT-distribution.zip
-cd springboot-chutes-and-ladder-1.0-SNAPSHOT/windows
-java -Denvironment=<environmentname> -jar ./springboot-chutesladders-0.0.1-SNAPSHOT.jar JOHN JOE PETER DAVID
+cd springboot-chutesladders-1.0-SNAPSHOT/windows
+java -Denvironment=<environmentname> -jar ./springboot-chutesladders-1.0-SNAPSHOT.jar JOHN JOE PETER DAVID
 ```
 ### TODO
 - Add tests for random pick up of chutes and ladder configuration from multiple configuration.
